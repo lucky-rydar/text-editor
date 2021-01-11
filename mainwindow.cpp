@@ -6,8 +6,8 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    //ui->centralwidget->layout()->addWidget(new QTabWidget(this)); // TODO the same but with custom QTabWidget
-
+    tabs = new CustomTabWidget(this);
+    ui->centralwidget->layout()->addWidget(tabs);
 }
 
 MainWindow::~MainWindow()

@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "customtab.h"
+#include "customtabwidget.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -18,5 +19,6 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    CustomTabWidget *tabs;
 };
 #endif // MAINWINDOW_H
