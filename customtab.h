@@ -9,7 +9,7 @@ class CustomTab : public QWidget
 {
     Q_OBJECT
 public:
-    explicit CustomTab(QWidget *parent = nullptr);
+    explicit CustomTab(QString content = "", QWidget *parent = nullptr);
     QTextEdit* textEdit;
 private:
 

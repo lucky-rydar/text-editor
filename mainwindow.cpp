@@ -8,6 +8,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     tabs = new CustomTabWidget(this);
     ui->centralwidget->layout()->addWidget(tabs);
+
+    QObject::connect(ui->actionNew, &QAction::triggered, [=](){ this->tabs->addNamedTab(); });
 }
 
 MainWindow::~MainWindow()

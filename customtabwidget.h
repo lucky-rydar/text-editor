@@ -16,7 +16,7 @@ class CustomTabWidget : public QTabWidget
 public:
     explicit CustomTabWidget(QWidget* parent = nullptr);
 
-    void addNamedTab();
+    void addNamedTab(QString content = "");
 
     QMap<QString, CustomTab*> tabByName;
 };
