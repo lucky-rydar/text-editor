@@ -8,7 +8,7 @@
 #include <QVariant>
 #include <QMap>
 #include <QLayout>
-#include "customtab.h"
+#include "filetab.h"
 
 class CustomTabWidget : public QTabWidget
 {
@@ -20,7 +20,7 @@ public:
     void addFileTab(QFileInfo fileInfo);
 
 
-    QMap<QString, CustomTab*> tabByName;
+    QMap<QString, FileTab*> tabByName;
 };
 
 #endif // CUSTOMTABWIDGET_H

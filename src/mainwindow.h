@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 #include <QFileDialog>
-#include "customtab.h"
+#include "filetab.h"
 #include "customtabwidget.h"
 
 QT_BEGIN_NAMESPACE

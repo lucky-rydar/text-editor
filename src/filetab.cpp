@@ -1,6 +1,6 @@
-#include "customtab.h"
+#include "filetab.h"
 
-CustomTab::CustomTab(QString content, QWidget *parent) : QWidget(parent)
+FileTab::FileTab(QString content, QWidget *parent) : QWidget(parent)
 {
     textEdit = new QTextEdit(this);
 
@@ -10,7 +10,7 @@ CustomTab::CustomTab(QString content, QWidget *parent) : QWidget(parent)
     textEdit->setText(content);
 }
 
-CustomTab::CustomTab(QFileInfo fileInfo, QWidget *parent) : QWidget(parent)
+FileTab::FileTab(QFileInfo fileInfo, QWidget *parent) : QWidget(parent)
 {
     textEdit = new QTextEdit(this);
 

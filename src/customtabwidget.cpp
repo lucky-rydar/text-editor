@@ -17,7 +17,7 @@ void CustomTabWidget::addNamedTab(QString content)
         QString newName = baseName + QString::number(i);
         if(!tabByName.contains(newName))
         {
-            CustomTab *customTab = new CustomTab(content, this);
+            FileTab *customTab = new FileTab(content, this);
             this->tabByName.insert(newName, customTab);
             addTab(customTab, newName);
 
@@ -33,7 +33,7 @@ void CustomTabWidget::addFileTab(QFileInfo fileInfo)
 
     if(!tabByName.contains(tabName))
     {
-        CustomTab *customTab = new CustomTab(fileInfo, this);
+        FileTab *customTab = new FileTab(fileInfo, this);
         this->tabByName.insert(tabName, customTab);
         this->addTab(customTab, tabName);
     }
@@ -44,7 +44,7 @@ void CustomTabWidget::addFileTab(QFileInfo fileInfo)
             QString newTabName = tabName + " " + QString::number(i);
             if(!tabByName.contains(newTabName))
             {
-                CustomTab *customTab = new CustomTab(fileInfo, this);
+                FileTab *customTab = new FileTab(fileInfo, this);
                 this->tabByName.insert(newTabName, customTab);
                 this->addTab(customTab, newTabName);
             }

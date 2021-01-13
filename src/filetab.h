@@ -6,12 +6,12 @@
 #include <QTextEdit>
 #include <QFileInfo>
 
-class CustomTab : public QWidget
+class FileTab : public QWidget
 {
     Q_OBJECT
 public:
-    explicit CustomTab(QString content = "", QWidget *parent = nullptr);
-    CustomTab(QFileInfo fileInfo, QWidget* parent = nullptr);
+    explicit FileTab(QString content = "", QWidget *parent = nullptr);
+    FileTab(QFileInfo fileInfo, QWidget* parent = nullptr);
 
     QTextEdit* textEdit;
     QFileInfo fileInfo;
