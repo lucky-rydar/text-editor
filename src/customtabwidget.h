@@ -17,6 +17,8 @@ public:
     explicit CustomTabWidget(QWidget* parent = nullptr);
 
     void addNamedTab(QString content = "");
+    void addFileTab(QFileInfo fileInfo);
+
 
     QMap<QString, CustomTab*> tabByName;
 };

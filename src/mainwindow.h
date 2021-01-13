@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QFileDialog>
 #include "customtab.h"
 #include "customtabwidget.h"
 
@@ -16,6 +17,8 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
+    void openFiles();
 
 private:
     Ui::MainWindow *ui;

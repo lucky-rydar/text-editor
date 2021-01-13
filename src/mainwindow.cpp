@@ -10,10 +10,22 @@ MainWindow::MainWindow(QWidget *parent)
     ui->centralwidget->layout()->addWidget(tabs);
 
     QObject::connect(ui->actionNew, &QAction::triggered, [=](){ this->tabs->addNamedTab(); });
+    QObject::connect(ui->actionOpen, &QAction::triggered, this, &MainWindow::openFiles);
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::openFiles()
+{
+    QStringList filePaths;
+    filePaths = QFileDialog::getOpenFileNames(this, "Select file(s) you wnat to open", "", "Any file (*)");
+    foreach(auto path, filePaths)
+    {
+        QFileInfo fileInfo(path);
+        this->tabs->addFileTab(fileInfo);
+    }
 }
 
