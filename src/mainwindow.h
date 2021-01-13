@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QFileDialog>
+#include <QDialog>
 #include "filetab.h"
 #include "customtabwidget.h"
 
@@ -19,7 +20,7 @@ public:
     ~MainWindow();
 
     void openFiles();
-
+    void saveCurrentOpenedFile();
 private:
     Ui::MainWindow *ui;
     CustomTabWidget *tabs;

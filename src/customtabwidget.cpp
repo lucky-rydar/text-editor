@@ -6,6 +6,8 @@ CustomTabWidget::CustomTabWidget(QWidget* parent) : QTabWidget(parent)
     setMovable(true);
 
     addNamedTab();
+
+    QObject::connect(this, &QTabWidget::tabCloseRequested, this, &CustomTabWidget::onCloseRequested);
 }
 
 void CustomTabWidget::addNamedTab(QString content)
@@ -51,4 +53,24 @@ void CustomTabWidget::addFileTab(QFileInfo fileInfo)
         }
     }
     this->setCurrentIndex(this->count()-1);
+}
+
+void CustomTabWidget::onCloseRequested(int index)
+{
+    auto reply = QMessageBox::question(this, "Save", "Wanna save this file?", QMessageBox::Yes | QMessageBox::No);
+    //TODO checking if file was already saved
+    if(reply == QMessageBox::No)
+    {
+        this->customRemoveTab(index);
+    }
+    else if(reply == QMessageBox::Yes)
+    {
+        qDebug() << "cant save yet";
+    }
+}
+
+void CustomTabWidget::customRemoveTab(int index)
+{
+    this->tabByName.remove(this->tabText(index));
+    this->removeTab(index);
 }

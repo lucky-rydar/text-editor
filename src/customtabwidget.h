@@ -8,6 +8,7 @@
 #include <QVariant>
 #include <QMap>
 #include <QLayout>
+#include <QMessageBox>
 #include "filetab.h"
 
 class CustomTabWidget : public QTabWidget
@@ -18,7 +19,8 @@ public:
 
     void addNamedTab(QString content = "");
     void addFileTab(QFileInfo fileInfo);
-
+    void onCloseRequested(int index);
+    void customRemoveTab(int index);
 
     QMap<QString, FileTab*> tabByName;
 };

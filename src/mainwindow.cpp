@@ -29,3 +29,8 @@ void MainWindow::openFiles()
     }
 }
 
+void MainWindow::saveCurrentOpenedFile()
+{
+
+}
+
