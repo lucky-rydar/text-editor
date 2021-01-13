@@ -8,19 +8,14 @@ CONFIG += c++11
 # In order to do so, uncomment the following line.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
-SOURCES += \
-    customtab.cpp \
-    customtabwidget.cpp \
-    main.cpp \
-    mainwindow.cpp
+SOURCES += main.cpp
 
-HEADERS += \
-    customtab.h \
-    customtabwidget.h \
-    mainwindow.h
+SOURCES += $$files(src/*.cpp, true)
 
-FORMS += \
-    mainwindow.ui
+HEADERS += $$files(src/*.h, true)
+
+FORMS += $$files(src/*.ui, true)
+
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
