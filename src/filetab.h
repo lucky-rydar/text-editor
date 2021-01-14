@@ -5,6 +5,8 @@
 #include <QLayout>
 #include <QTextEdit>
 #include <QFileInfo>
+#include <QDebug>
+#include <QFileDialog>
 
 class FileTab : public QWidget
 {
@@ -13,11 +15,15 @@ public:
     explicit FileTab(QString content = "", QWidget *parent = nullptr);
     FileTab(QFileInfo fileInfo, QWidget* parent = nullptr);
 
+    bool isFileSaved();
+    void saveFile();
+    void saveFileAs();
+
+
     QTextEdit* textEdit;
     QFileInfo fileInfo;
 private:
-
-
+    bool isSaved;
 signals:
 
 };

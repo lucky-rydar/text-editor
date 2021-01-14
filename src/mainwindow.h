@@ -21,6 +21,7 @@ public:
 
     void openFiles();
     void saveCurrentOpenedFile();
+    void saveAsCurrentOpenedFile();
 private:
     Ui::MainWindow *ui;
     CustomTabWidget *tabs;

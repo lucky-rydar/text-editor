@@ -11,6 +11,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     QObject::connect(ui->actionNew, &QAction::triggered, [=](){ this->tabs->addNamedTab(); });
     QObject::connect(ui->actionOpen, &QAction::triggered, this, &MainWindow::openFiles);
+    QObject::connect(ui->actionSave, &QAction::triggered, this, &MainWindow::saveCurrentOpenedFile);
+    QObject::connect(ui->actionSaveAs, &QAction::triggered, this, &MainWindow::saveAsCurrentOpenedFile);
 }
 
 MainWindow::~MainWindow()
@@ -31,6 +33,11 @@ void MainWindow::openFiles()
 
 void MainWindow::saveCurrentOpenedFile()
 {
+    qobject_cast<FileTab*>(tabs->widget(tabs->currentIndex()))->saveFile();
+}
 
+void MainWindow::saveAsCurrentOpenedFile()
+{
+    qobject_cast<FileTab*>(tabs->widget(tabs->currentIndex()))->saveFileAs();
 }
 
