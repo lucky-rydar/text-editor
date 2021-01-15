@@ -33,6 +33,7 @@
     <addaction name="actionNew"/>
     <addaction name="actionSave"/>
     <addaction name="actionSaveAs"/>
+    <addaction name="actionRename"/>
    </widget>
    <widget class="QMenu" name="menuEdit">
     <property name="title">
@@ -73,6 +74,11 @@
   <action name="actionSaveAs">
    <property name="text">
     <string>Save as</string>
+   </property>
+  </action>
+  <action name="actionRename">
+   <property name="text">
+    <string>Rename</string>
    </property>
   </action>
  </widget>

@@ -13,6 +13,11 @@ MainWindow::MainWindow(QWidget *parent)
     QObject::connect(ui->actionOpen, &QAction::triggered, this, &MainWindow::openFiles);
     QObject::connect(ui->actionSave, &QAction::triggered, this, &MainWindow::saveCurrentOpenedFile);
     QObject::connect(ui->actionSaveAs, &QAction::triggered, this, &MainWindow::saveAsCurrentOpenedFile);
+    QObject::connect(ui->actionRename, &QAction::triggered, [=](){
+        auto newName = QInputDialog::getText(this, "Rename", "Filename");
+        if(!newName.isEmpty())
+            tabs->renameTab(tabs->currentIndex(), newName);
+    });
 }
 
 MainWindow::~MainWindow()

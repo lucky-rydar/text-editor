@@ -85,3 +85,14 @@ void CustomTabWidget::customRemoveTab(int index)
     this->tabByName.remove(this->tabText(index));
     this->removeTab(index);
 }
+
+void CustomTabWidget::renameTab(int index, QString newName)
+{
+    QWidget* buffWidget = this->widget(index);
+    QString oldName = this->tabText(index);
+
+    tabByName.remove(oldName);
+    tabByName.insert(newName, qobject_cast<FileTab*>(buffWidget));
+
+    this->setTabText(index, newName);
+}

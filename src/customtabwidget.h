@@ -21,6 +21,7 @@ public:
     void addFileTab(QFileInfo fileInfo);
     void onCloseRequested(int index);
     void customRemoveTab(int index);
+    void renameTab(int index, QString newName);
 
     QMap<QString, FileTab*> tabByName;
 };

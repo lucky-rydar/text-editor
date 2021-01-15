@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QFileDialog>
 #include <QDialog>
+#include <QInputDialog>
 #include "filetab.h"
 #include "customtabwidget.h"
 
