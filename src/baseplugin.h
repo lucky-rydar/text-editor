@@ -3,18 +3,19 @@
 
 #include <QObject>
 #include <QMainWindow>
+#include "mainwindow.h"
 
 class BasePlugin : public QObject
 {
     Q_OBJECT
 public:
-    BasePlugin(QMainWindow *mainWindow, QObject *parent = nullptr);
+    BasePlugin(MainWindow *mainWindow, QObject *parent = nullptr);
 
     virtual QString getName() = 0;
     virtual QString getVersion() = 0;
     virtual QString getDeveloper() = 0;
 
-    QMainWindow* mainWindow;
+    MainWindow* mainWindow;
 private:
 
 signals:

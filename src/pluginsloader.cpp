@@ -1,6 +1,6 @@
 #include "pluginsloader.h"
 
-PluginsLoader::PluginsLoader(QWidget *mainWindow, QObject *parent) : QObject(parent)
+PluginsLoader::PluginsLoader(MainWindow *mainWindow, QObject *parent) : QObject(parent)
 {
     pluginsDir = QDir("mod");
     if(!pluginsDir.exists())

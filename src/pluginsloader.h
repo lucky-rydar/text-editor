@@ -8,6 +8,7 @@
 #include <QDebug>
 #include <QLibrary>
 #include "baseplugin.h"
+#include "mainwindow.h"
 
 typedef BasePlugin* (*BasePluginCreator)(QWidget*, QObject*);
 
@@ -15,7 +16,7 @@ class PluginsLoader : public QObject
 {
     Q_OBJECT
 public:
-    explicit PluginsLoader(QWidget *mainWindow, QObject *parent = nullptr);
+    explicit PluginsLoader(MainWindow *mainWindow, QObject *parent = nullptr);
 
 public:
     void load();
@@ -23,7 +24,7 @@ public:
 private:
     QDir pluginsDir;
     QList<BasePlugin*> loadedPlugins;
-    QWidget *mainWindow;
+    MainWindow *mainWindow;
 
 signals:
 
