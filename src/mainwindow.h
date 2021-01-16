@@ -20,11 +20,16 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+public:
     void openFiles();
     void saveCurrentOpenedFile();
     void saveAsCurrentOpenedFile();
+
+public:
+    CustomTabWidget *tabs;
+
 private:
     Ui::MainWindow *ui;
-    CustomTabWidget *tabs;
+
 };
 #endif // MAINWINDOW_H

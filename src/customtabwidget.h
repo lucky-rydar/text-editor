@@ -17,13 +17,16 @@ class CustomTabWidget : public QTabWidget
 public:
     explicit CustomTabWidget(QWidget* parent = nullptr);
 
+public:
     void addNamedTab(QString content = "");
     void addFileTab(QFileInfo fileInfo);
     void onCloseRequested(int index);
     void customRemoveTab(int index);
     void renameTab(int index, QString newName);
 
+public:
     QMap<QString, FileTab*> tabByName;
+
 };
 
 #endif // CUSTOMTABWIDGET_H

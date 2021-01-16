@@ -15,17 +15,21 @@ public:
     explicit FileTab(QString content = "", QWidget *parent = nullptr);
     FileTab(QFileInfo fileInfo, QWidget* parent = nullptr);
 
+public:
     bool isFileSaved();
     void saveFile();
     void saveFileAs();
 
-
+public:
     QTextEdit* textEdit;
     QFileInfo fileInfo;
+
 private:
     bool isSaved;
+
 signals:
     void RenameMe(QString name);
+
 };
 
 #endif // CUSTOMTAB_H
