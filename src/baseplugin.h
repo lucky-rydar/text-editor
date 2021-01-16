@@ -2,18 +2,20 @@
 #define BASEPLUGIN_H
 
 #include <QObject>
+#include <QMainWindow>
 
 class BasePlugin : public QObject
 {
     Q_OBJECT
 public:
-    explicit BasePlugin(QWidget *mainWindow, QObject *parent = nullptr);
+    BasePlugin(QMainWindow *mainWindow, QObject *parent = nullptr);
 
     virtual QString getName() = 0;
     virtual QString getVersion() = 0;
     virtual QString getDeveloper() = 0;
+
+    QMainWindow* mainWindow;
 private:
-    QWidget* mainWindow;
 
 signals:
 

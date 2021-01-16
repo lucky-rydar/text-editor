@@ -1,6 +1,6 @@
 #include "baseplugin.h"
 
-BasePlugin::BasePlugin(QWidget *mainWindow, QObject *parent) : QObject(parent)
+BasePlugin::BasePlugin(QMainWindow *mainWindow, QObject *parent) : QObject(parent)
 {
     this->mainWindow = mainWindow;
 }

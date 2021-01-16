@@ -20,6 +20,7 @@ MainWindow::MainWindow(QWidget *parent)
     });
 
     this->pluginLoader = new PluginsLoader(this);
+    pluginLoader->load();
 }
 
 MainWindow::~MainWindow()
