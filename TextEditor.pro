@@ -8,13 +8,20 @@ CONFIG += c++11
 # In order to do so, uncomment the following line.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    src/baseplugin.cpp \
+    src/customtabwidget.cpp \
+    src/filetab.cpp \
+    src/mainwindow.cpp \
+    src/pluginsloader.cpp
 
-SOURCES += $$files(src/*.cpp, true)
+HEADERS += src/baseplugin.h \
+    src/customtabwidget.h \
+    src/filetab.h \
+    src/mainwindow.h \
+    src/pluginsloader.h
 
-HEADERS += $$files(src/*.h, true)
-
-FORMS += $$files(src/*.ui, true)
+FORMS += src/mainwindow.ui
 
 
 # Default rules for deployment.

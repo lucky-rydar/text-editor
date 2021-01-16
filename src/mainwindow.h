@@ -7,6 +7,7 @@
 #include <QInputDialog>
 #include "filetab.h"
 #include "customtabwidget.h"
+#include "pluginsloader.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -27,9 +28,10 @@ public:
 
 public:
     CustomTabWidget *tabs;
+    Ui::MainWindow *ui;
 
 private:
-    Ui::MainWindow *ui;
+    PluginsLoader *pluginLoader;
 
 };
 #endif // MAINWINDOW_H
