@@ -76,4 +76,6 @@ void FileTab::saveFileAs()
 
     this->fileInfo = fi;
     this->isSaved = true;
+
+    emit RenameMe(fileInfo.fileName());
 }

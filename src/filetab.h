@@ -25,7 +25,7 @@ public:
 private:
     bool isSaved;
 signals:
-
+    void RenameMe(QString name);
 };
 
 #endif // CUSTOMTAB_H

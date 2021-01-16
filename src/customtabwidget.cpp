@@ -20,6 +20,10 @@ void CustomTabWidget::addNamedTab(QString content)
         if(!tabByName.contains(newName))
         {
             FileTab *customTab = new FileTab(content, this);
+            connect(customTab, &FileTab::RenameMe, [=](QString name){
+                this->renameTab(this->indexOf(customTab), name);
+            });
+
             this->tabByName.insert(newName, customTab);
             addTab(customTab, newName);
 
@@ -36,6 +40,10 @@ void CustomTabWidget::addFileTab(QFileInfo fileInfo)
     if(!tabByName.contains(tabName))
     {
         FileTab *customTab = new FileTab(fileInfo, this);
+        connect(customTab, &FileTab::RenameMe, [=](QString name){
+            this->renameTab(this->indexOf(customTab), name);
+        });
+
         this->tabByName.insert(tabName, customTab);
         this->addTab(customTab, tabName);
     }
@@ -47,6 +55,10 @@ void CustomTabWidget::addFileTab(QFileInfo fileInfo)
             if(!tabByName.contains(newTabName))
             {
                 FileTab *customTab = new FileTab(fileInfo, this);
+                connect(customTab, &FileTab::RenameMe, [=](QString name){
+                    this->renameTab(this->indexOf(customTab), name);
+                });
+
                 this->tabByName.insert(newTabName, customTab);
                 this->addTab(customTab, newTabName);
             }
