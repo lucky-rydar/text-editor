@@ -1,4 +1,4 @@
-#include "pluginsloader.h"
+#include "mainwindow.h"
 
 PluginsLoader::PluginsLoader(MainWindow *mainWindow, QObject *parent) : QObject(parent)
 {

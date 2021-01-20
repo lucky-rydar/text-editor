@@ -1,4 +1,4 @@
-#include "baseplugin.h"
+#include "mainwindow.h"
 
 BasePlugin::BasePlugin(MainWindow *mainWindow, QObject *parent) : QObject(parent)
 {

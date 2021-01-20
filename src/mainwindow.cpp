@@ -18,6 +18,8 @@ MainWindow::MainWindow(QWidget *parent)
         if(!newName.isEmpty())
             tabs->renameTab(tabs->currentIndex(), newName);
     });
+
+    this->pluginsLoader = new PluginsLoader(this, this);
 }
 
 MainWindow::~MainWindow()

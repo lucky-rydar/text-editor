@@ -17,11 +17,9 @@ SOURCES += \
     src/pluginsloader.cpp
 
 HEADERS += \
-    src/baseplugin.h \
     src/customtabwidget.h \
     src/filetab.h \
-    src/mainwindow.h \
-    src/pluginsloader.h
+    src/mainwindow.h
 
 FORMS += \
     src/mainwindow.ui
